@@ -3,4 +3,85 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
-//.container{width:100%;}
+.container{
+width:100%;
+	.container-fluid{
+
+		.row{
+
+			div{
+
+				.row{
+
+					h2{
+
+
+
+					}
+
+				}
+			}
+
+		}
+
+	}
+
+	nav{
+
+		ol{
+
+			li{
+
+				a{
+
+					&#start-screen{
+
+
+
+					}
+					&#members{
+
+
+
+					}
+					//other link styles
+
+				}
+
+			}
+
+		}
+
+	}
+	section{
+
+		&.text-center{
+			//All of the members section
+			text-transform: uppercase;
+
+			h3{
+
+				
+
+			}
+
+			div{
+
+
+
+			}
+
+		}
+
+		&.text-justify{
+
+
+
+		}
+
+	}
+
+
+
+
+}
