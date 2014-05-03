@@ -3,10 +3,27 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
+body{overflow-x:hidden;}
+$color:#eee;
+@mixin member($height) {
+	height:$height;
+	background-size: 100% auto;
+	border: solid 1px black;
+	vertical-align: middle;
+	line-height: $height;
+	background-color: $color;
+}
 .container{
 width:100%;
 	.container-fluid{
-
+		background: red;
+	  bottom: 0;  
+	  left: 0;
+	  margin: auto;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+  
 		.row{
 
 			div{
@@ -34,12 +51,12 @@ width:100%;
 
 				a{
 
-					&#start-screen{
+					&#Start-screen{
 
 
 
 					}
-					&#members{
+					&#Members{
 
 
 
@@ -67,15 +84,26 @@ width:100%;
 
 			div{
 
-
+				@include member(200px);
 
 			}
 
 		}
 
 		&.text-justify{
+		//About section
+
+			h3{
 
 
+
+			}
+
+			p{
+
+
+
+			}
 
 		}
 
