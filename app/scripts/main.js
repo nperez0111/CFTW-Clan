@@ -46,12 +46,32 @@ $( document ).ready(function() {
 						}
 						else if(Math.abs($(cur).width()-Math.floor(theWindow.width()*0.50))<40){
 							*/
+						if(theWindow.width()>991){	
 							if($(isopen).index()<4){
 								widthy ='33.3333333%';
 							}
 							else if($(isopen).index()>3){
 								widthy = '25%';
 							}
+						}
+						else if(theWindow.width()>767){
+							if($(isopen).index()<4){
+								widthy ='50%';
+							}
+							else if($(isopen).index()>3){
+								widthy = '25%';
+							}
+
+						}
+						else{
+
+							if($(isopen).index()<4){
+								widthy ='100%';
+							}
+							else if($(isopen).index()>3){
+								widthy = '50%';
+							}
+						}
 						/*}
 						else{
 							
@@ -93,7 +113,7 @@ var first = true;
 
 				if(/*Math.abs($(this).width()-Math.floor(theWindow.width()*0.3333333))<40*/
 					$(this).index()<4){
-					
+					if(theWindow.width()>768){
 					//check if it is the 1st 2nd or 3rd elem
 					if($(this).index()==1){
 
@@ -152,12 +172,20 @@ var first = true;
 							height: "200px"
 						});
 					}//end check index of elem within parent
+				}
+				else{
+
+					$(this).velocity({
+								
+								height:"400px"
+							});
+				}
 
 				}
 				//if they are the other members
 				else if($(this).index()>3){
 					//only if the size of the window is big
-					if(theWindow.width()>1199){
+					if(theWindow.width()>991){
 
 						if($(this).index()==5){
 
@@ -207,17 +235,108 @@ var first = true;
 							});
 
 						}
-					}
-					else if(theWindow.width()>991){
-
-						
-
-					}
 						$(this).velocity({
 								width:'50%',
 								height:"400px"
 							});
 					}
+
+
+					else if(theWindow.width()>767){
+						
+							if($(this).index()==4){
+								resetter("n");
+								$($('.btn').get(4)).css({
+									position:'absolute',
+									left:'0',
+									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+								});
+								$($('.btn').get(5)).css({
+									position:'absolute',
+									left:'25%',
+									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+								});
+
+							}
+							else if($(this).index()==5){
+
+								$($('.btn').get(5)).css({
+								position:'absolute',
+								right:'0',
+								top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+230+"px"
+							});
+
+							}
+
+							else if($(this).index()==7){
+								$($('.btn').get(7)).css({
+									position:'absolute',
+									left:'0',
+									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+630+"px"
+								});
+								
+							}
+							else if($(this).index()==8){
+
+							$($('.btn').get(8)).css({
+								top:"0px",
+								position:"relative"
+							});
+							$($('.btn').get(9)).css({
+								top:"0px",
+								position:"relative"
+							});
+							$($('.btn').get(10)).css({
+								left:"0%",
+								position:"relative"
+							});
+
+							$($('.btn').get(8)).velocity({
+								top:-200
+							});
+							
+
+							$($('.btn').get(9)).velocity({
+								top:-200
+							});
+							$($('.btn').get(10)).velocity({
+								left:"-50%"
+							});
+							
+
+							}
+							else if($(this).index()==9){
+								$($('.btn').get(9)).css({
+									position:'absolute',
+									right:'0',
+									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+								});
+								
+							}
+							$(this).velocity({
+								width:'50%',
+								height:"400px"
+							});
+					}
+					else{
+						if($(this).index()%2==1){
+							console.log("fired");
+							$($('.btn').get($(this).index())).css({
+									position:'absolute',
+									right:'0',
+									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+630+(($(this).index()-5)*100)+"px"
+								});
+						}
+						$(this).velocity({
+								width:'100%',
+								height:"400px"
+							});
+					}
+
+						
+				}
+						
+					
 				
 		
 		
