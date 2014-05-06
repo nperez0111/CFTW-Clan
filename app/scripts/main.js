@@ -144,7 +144,7 @@ var first = true;
 							width:'50%',
 							height:"600px",
 							"margin-left": "25%"
-						}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+						}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 						$($('.btn').get(1)).css({
 							width:'25%',
 							height: "200px",
@@ -175,7 +175,7 @@ var first = true;
 						$(this).css({
 							width:'50%',
 							height:"600px"
-						}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+						}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 						$($('.btn').get(0)).css({
 							width:'25%',
 							height: "200px"
@@ -201,7 +201,7 @@ var first = true;
 							width:'50%',
 							height:"600px",
 							"margin-left": "25%"
-						}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+						}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 						$($('.btn').get(0)).css({
 							width:'25%',
 							height: "200px"
@@ -252,7 +252,7 @@ var first = true;
 					$(this).css({
 								
 								height:"400px"
-							}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 				}
 
 				}
@@ -321,7 +321,7 @@ var first = true;
 						$(this).css({
 								width:'50%',
 								height:"400px"
-							}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 					}
 
 
@@ -399,7 +399,7 @@ var first = true;
 							$(this).css({
 								width:'50%',
 								height:"400px"
-							}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 					}
 					else{
 						if($(this).index()%2==1){
@@ -408,12 +408,12 @@ var first = true;
 									position:'absolute',
 									right:'0',
 									top: valy+600+(($(this).index()-5)*100)+"px"
-								}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+								}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 						}
 						$(this).css({
 								width:'100%',
 								height:"400px"
-							}).delay(400).velocity("scroll", 1000).velocity({ opacity: 1 });
+							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 					}
 
 						
