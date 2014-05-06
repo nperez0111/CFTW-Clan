@@ -4,29 +4,45 @@ $( document ).ready(function() {
 			//scrolling links
 		$('li').click(function(e){
 			e.preventDefault();
-			console.log($(this).find("href").attr('id'));
 			$($(this).children().attr('href')).velocity("scroll", 1000)
 		  .velocity({ opacity: 1 });
+		});
+		$('.perfboom').click(function(e){
+			e.preventDefault();
+			$($(this).children().attr('href')).velocity("scroll", 1000)
+		  .velocity({ opacity: 1 }).trigger("click");
 		});
 
 		//full page bg
 			var theWindow        = $(window),
 			    $bg              = $(".container-fluid"),
-			    aspectRatio      = $bg.width() / $bg.height();
+			    aspectRatio      = $bg.width() / $bg.height(),
+			    valy = theWindow.height()+$('nav').height()+$('.members').outerHeight()+30;
 			    			    		
 			function resizeBg() {
 				var h= theWindow.height()+"px";
+				valy = theWindow.height()+$('nav').height()+$('.members').outerHeight()+30;
 				var hs= (theWindow.height()/2)-($bg.children().height()/2);
 				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+
 				    $bg
-				    	.css({"height":"100%","width":"auto"
+				    	.css({"height":"100%",
+				    		"width":"auto"
 				    	});
+
 				    	$bg.children().css("margin-top", hs);
+
 				    	$('nav').css("margin-top",h);
-				} else {
+				} 
+				else {
+
 				    $bg
-				    	.css({"width":"100%","height":"auto"		
-				    });$bg.children().css("margin-top", hs);
+				    	.css({
+				    		"width":"100%",
+				    		"height":"auto"		
+				    });
+				    	$bg.children().css("margin-top", hs);
+
 				    	$('nav').css("margin-top",h);
 				}
 							
@@ -34,6 +50,10 @@ $( document ).ready(function() {
 			                   			
 			theWindow.resize(resizeBg).trigger("resize");
 			//in progress--clickable members
+			
+			function cal(i){
+				return valy+(200*i)+"px";
+			}
 			var isopen=null;
 			function resetter(str){
 				
@@ -83,7 +103,7 @@ $( document ).ready(function() {
 						});
 			if(str=="n"){
 				$('.btn').each(function() {
-					if(!$(this).is(isopen))
+					
 				  		$( this ).removeAttr("style");
 				});
 			}
@@ -112,8 +132,9 @@ var first = true;
 		}
 			
 
-				if(/*Math.abs($(this).width()-Math.floor(theWindow.width()*0.3333333))<40*/
-					$(this).index()<4){
+				if($(this).index()<4){
+
+
 					if(theWindow.width()>768){
 					//check if it is the 1st 2nd or 3rd elem
 					if($(this).index()==1){
@@ -121,15 +142,31 @@ var first = true;
 						console.log("Im 1");
 						$(this).css({
 							width:'50%',
-							height:"600px"
+							height:"600px",
+							"margin-left": "25%"
 						});
 						$($('.btn').get(1)).css({
 							width:'25%',
-							height: "200px"
+							height: "200px",
+							position: "absolute",
+							left:"0px"
 						});
 						$($('.btn').get(2)).css({
+							width:'25%'
+						});
+						$($('.btn').get(3)).css({
 							width:'25%',
-							height: "200px"
+							height: "200px",
+							position: "absolute",
+							left:"0px",
+							top: cal(1)
+						});
+						$($('.btn').get(4)).css({
+							width:'25%',
+							height: "200px",
+							position: "absolute",
+							left:"0px",
+							top: cal(2)
 						});
 
 					}
@@ -150,27 +187,63 @@ var first = true;
 						$($('.btn').get(3)).css({
 							position:'absolute',
 							left:'0',
-							top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+230+"px"
+							top: cal(1)
 						});
 						$($('.btn').get(4)).css({
 							position:'absolute',
 							left:'0',
-							top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+							top: cal(2)
 						});
 					}
 					else{
 						console.log("Im 3");
 						$(this).css({
 							width:'50%',
-							height:"600px"
+							height:"600px",
+							"margin-left": "25%"
 						});
 						$($('.btn').get(0)).css({
-							width:'50%',
+							width:'25%',
 							height: "200px"
 						});
 						$($('.btn').get(1)).css({
-							width:'50%',
+							width:'25%',
 							height: "200px"
+						});
+						$($('.btn').get(3)).css({
+							width:'25%',
+							height: "200px",
+							position: "absolute",
+							right:"25%",
+							top: cal(0)
+						});
+						$($('.btn').get(4)).css({
+							width:'25%',
+							height: "200px",
+							position: "absolute",
+							right:"0px",
+							top: cal(0)
+						});
+						$($('.btn').get(5)).css({
+							width:'25%',
+							height: "200px",
+							position: "absolute",
+							left:"0px",
+							top: cal(1)
+						});
+						$($('.btn').get(6)).css({
+							width:'25%',
+							height: "200px",
+							position: "absolute",
+							left:"0px",
+							top: cal(2)
+						});
+						$($('.btn').get(7)).css({
+							width:'25%',
+							height: "200px",
+							position: "absolute",
+							left:"0px",
+							top: cal(3)
 						});
 					}//end check index of elem within parent
 				}
@@ -193,7 +266,7 @@ var first = true;
 							$($('.btn').get(5)).css({
 								position:'absolute',
 								left:'0',
-								top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+								top: cal(2)
 							});
 
 						}
@@ -203,13 +276,13 @@ var first = true;
 							$($('.btn').get(6)).css({
 								position:'absolute',
 								left:'0',
-								top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+								top: cal(2)
 							});
 
 							$($('.btn').get(7)).css({
 								position:'absolute',
 								left:'25%',
-								top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+								top: cal(2)
 							});
 
 						}
@@ -219,7 +292,16 @@ var first = true;
 							$($('.btn').get(7)).css({
 								position:'absolute',
 								right:'0',
-								top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+230+"px"
+								top: cal(1)
+							});
+
+						}
+						else if($(this).index()==9){console.log("was me");
+
+							$($('.btn').get(10)).css({
+								top:cal(3),
+								position:"absolute",
+								left:'0'
 							});
 
 						}
@@ -250,12 +332,12 @@ var first = true;
 								$($('.btn').get(4)).css({
 									position:'absolute',
 									left:'0',
-									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+									top: cal(2)
 								});
 								$($('.btn').get(5)).css({
 									position:'absolute',
 									left:'25%',
-									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+									top: cal(2)
 								});
 
 							}
@@ -264,7 +346,7 @@ var first = true;
 								$($('.btn').get(5)).css({
 								position:'absolute',
 								right:'0',
-								top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+230+"px"
+								top: cal(1)
 							});
 
 							}
@@ -273,7 +355,7 @@ var first = true;
 								$($('.btn').get(7)).css({
 									position:'absolute',
 									left:'0',
-									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+630+"px"
+									top: cal(3)
 								});
 								
 							}
@@ -310,7 +392,7 @@ var first = true;
 								$($('.btn').get(9)).css({
 									position:'absolute',
 									right:'0',
-									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+430+"px"
+									top: cal(2)
 								});
 								
 							}
@@ -325,7 +407,7 @@ var first = true;
 							$($('.btn').get($(this).index())).css({
 									position:'absolute',
 									right:'0',
-									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+630+(($(this).index()-5)*100)+"px"
+									top: valy+630+(($(this).index()-5)*100)+"px"
 								});
 						}
 						$(this).css({
