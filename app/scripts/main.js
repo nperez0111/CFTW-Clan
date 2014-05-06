@@ -403,7 +403,7 @@ var first = true;
 					}
 					else{
 						if($(this).index()%2==1){
-							console.log("fired");
+							console.log((($(this).index()-5)*100)+"yeah");
 							$($('.btn').get($(this).index())).css({
 									position:'absolute',
 									right:'0',
