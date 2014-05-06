@@ -77,13 +77,14 @@ $( document ).ready(function() {
 							
 						}*/
 						console.log(widthy);
-						isopen.velocity({
+						isopen.css({
 							width: widthy,
 							height:"200px"
 						});
 			if(str=="n"){
 				$('.btn').each(function() {
-				  $( this ).removeAttr("style");
+					if(!$(this).is(isopen))
+				  		$( this ).removeAttr("style");
 				});
 			}
 
@@ -118,15 +119,15 @@ var first = true;
 					if($(this).index()==1){
 
 						console.log("Im 1");
-						$(this).velocity({
+						$(this).css({
 							width:'50%',
 							height:"600px"
 						});
-						$($('.btn').get(1)).velocity({
+						$($('.btn').get(1)).css({
 							width:'25%',
 							height: "200px"
 						});
-						$($('.btn').get(2)).velocity({
+						$($('.btn').get(2)).css({
 							width:'25%',
 							height: "200px"
 						});
@@ -134,15 +135,15 @@ var first = true;
 					}
 					else if($(this).index()==2){
 						console.log("Im 2");	
-						$(this).velocity({
+						$(this).css({
 							width:'50%',
 							height:"600px"
 						});
-						$($('.btn').get(0)).velocity({
+						$($('.btn').get(0)).css({
 							width:'25%',
 							height: "200px"
 						});
-						$($('.btn').get(2)).velocity({
+						$($('.btn').get(2)).css({
 							width:'25%',
 							height: "200px"
 						});
@@ -159,15 +160,15 @@ var first = true;
 					}
 					else{
 						console.log("Im 3");
-						$(this).velocity({
+						$(this).css({
 							width:'50%',
 							height:"600px"
 						});
-						$($('.btn').get(0)).velocity({
+						$($('.btn').get(0)).css({
 							width:'50%',
 							height: "200px"
 						});
-						$($('.btn').get(1)).velocity({
+						$($('.btn').get(1)).css({
 							width:'50%',
 							height: "200px"
 						});
@@ -175,7 +176,7 @@ var first = true;
 				}
 				else{
 
-					$(this).velocity({
+					$(this).css({
 								
 								height:"400px"
 							});
@@ -230,12 +231,12 @@ var first = true;
 								position:"relative"
 							});
 
-							$($('.btn').get(10)).velocity({
+							$($('.btn').get(10)).css({
 								top:-200
 							});
 
 						}
-						$(this).velocity({
+						$(this).css({
 								width:'50%',
 								height:"400px"
 							});
@@ -291,15 +292,15 @@ var first = true;
 								position:"relative"
 							});
 
-							$($('.btn').get(8)).velocity({
+							$($('.btn').get(8)).css({
 								top:-200
 							});
 							
 
-							$($('.btn').get(9)).velocity({
+							$($('.btn').get(9)).css({
 								top:-200
 							});
-							$($('.btn').get(10)).velocity({
+							$($('.btn').get(10)).css({
 								left:"-50%"
 							});
 							
@@ -313,7 +314,7 @@ var first = true;
 								});
 								
 							}
-							$(this).velocity({
+							$(this).css({
 								width:'50%',
 								height:"400px"
 							});
@@ -327,7 +328,7 @@ var first = true;
 									top: theWindow.height()+$('nav').height()+$('.members').outerHeight()+630+(($(this).index()-5)*100)+"px"
 								});
 						}
-						$(this).velocity({
+						$(this).css({
 								width:'100%',
 								height:"400px"
 							});
