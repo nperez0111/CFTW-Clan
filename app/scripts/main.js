@@ -1,6 +1,48 @@
 
 $( document ).ready(function() {
+/*bolt kicking*/
 
+	$("body").append("<div id='overlay'>BOLT WILL BE KICKED!!</div>");
+
+		$("#overlay").click(function(){
+			$('.bolt').velocity({"height":"0px"
+				    	},1000);
+			 var docHeight = $(document).height();
+
+   
+
+   $(this)
+      .height(docHeight)
+      .css({
+         'opacity' : 0.4,
+         'position': 'fixed',
+         'top': 0,
+         'left': 0,
+         'background-color': 'black',
+         'width': '100%',
+         'z-index': 5000,
+         'font-size': '200px',
+         'color':'red'
+      });
+
+		});
+		$("#overlay").click(function(){
+
+			if($(this).html()=="BOLT WILL BE KICKED!!"){
+				$(this).html("BOLT WILL BE KICKED!!!");
+			}
+			else if($(this).html()=="BOLT WILL BE KICKED!!!"){
+				$(this).html("Yes KICKED!! Feel free to use the page without BOLT...");$('.bolt').remove();
+			}
+
+			else{
+				$("#overlay").remove();
+			}
+
+		});
+
+		//end bolt kicking
+		
 			//scrolling links
 		$('li').click(function(e){
 			e.preventDefault();
