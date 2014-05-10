@@ -7,9 +7,7 @@ $( document ).ready(function() {
 		$("#overlay").click(function(){
 			$('.bolt').velocity({"height":"0px"
 				    	},1000);
-			 var docHeight = $(document).height();
-
-   
+			 var docHeight = $(document).height();   
 
    $(this)
       .height(docHeight)
@@ -21,7 +19,7 @@ $( document ).ready(function() {
          'background-color': 'black',
          'width': '100%',
          'z-index': 5000,
-         'font-size': '200px',
+         'font-size': '10em',
          'color':'red'
       });
 
