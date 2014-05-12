@@ -1,12 +1,13 @@
 
 $( document ).ready(function() {
 /*bolt kicking*/
-
-	$("body").append("<div id='overlay'>BOLT WILL BE KICKED!!</div>");
-
+var firster=true;
+	$("body").append("<div id='overlay'>BOLT WILL BE KICKED!!</div><audio id='sound'><source src='http://www.cepheid.org/~cobra/music/2b0d44_Pacman_Dies_Sound_Effect.mp3' type='audio/mpeg'></audio>");
+	$('.bolt').css({'transition': 'all 1500ms ease-out'});
 		$("#overlay").click(function(){
-			$('.bolt').velocity({"height":"0px"
-				    	},1000);
+			if(firster){firster=false;
+			document.getElementById('sound').play();}
+			$('.bolt').css({'transform':'rotate(1800deg) scale(0)'});
 			 var docHeight = $(document).height();   
 
    $(this)
