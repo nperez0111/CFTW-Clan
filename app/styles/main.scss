@@ -7,7 +7,7 @@ body{overflow-x:hidden;}
 		$color:#eee;
 		@mixin member($height) {
 			height:$height;
-			background-size: 100% auto;
+			background-size: auto 100%;
 			border: solid 1px black;
 			vertical-align: middle;
 			line-height: $height;
@@ -15,6 +15,9 @@ body{overflow-x:hidden;}
 			padding:0px;
 			transition: all 350ms ease-out;
 			font-family: 'Orbitron', sans-serif;
+			
+			background-position: top center;
+			background-repeat: no-repeat;
 		}
 .container{
 width:100%;
@@ -84,6 +87,50 @@ width:100%;
 			div{
 
 				@include member(200px);
+				&#Perf{
+					background-image: url(../images/Perfection.png);
+					background-color: #0C1B10;
+				}
+				&#Boom{
+					background-image: url(../images/Boom.png);
+					background-color: #1C8807;
+				}
+				&#Zukko{
+					background-image: url(../images/Zukko.png);
+					background-color: #AF4702;
+				}
+				&#Nick{
+					background-image: url(../images/Nick.png);
+					background-color: #DAC10F;
+				}
+				&#Copy{
+					background-image: url(../images/Copy.png);
+					background-color: #060529;
+				}
+				&#Hybrid{
+					background-image: url(../images/Hybrid.png);
+					background-color: #076E88;
+				}
+				&#Rezyy{
+					background-image: url(../images/Rezyy.png);
+					background-color: #00180A;
+				}
+				&#Legit{
+					background-image: url(../images/Legit.png);
+					background-color: #7E420A;
+				}
+				&#Myst{
+					background-image: url(../images/Myst.png);
+					background-color: #2E3035;
+				}
+				&#Bolt{
+					background-image: url(../images/Bolt.png);
+					background-color: #C20000;
+				}
+				&#Blaze{
+					background-image: url(../images/Blaze.png);
+					background-color: #3C1F0C;
+				}
 
 			}
 
