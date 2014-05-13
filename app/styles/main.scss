@@ -10,14 +10,23 @@ body{overflow-x:hidden;}
 			background-size: auto 100%;
 			border: solid 1px black;
 			vertical-align: middle;
-			line-height: $height;
 			background-color: $color;
 			padding:0px;
 			transition: all 350ms ease-out;
 			font-family: 'Orbitron', sans-serif;
-			
+			text-indent: -9999px;
+			text-transform: capitalize;
 			background-position: top center;
 			background-repeat: no-repeat;
+			h3{
+				position: absolute;
+				bottom: 0px;
+				width: 100;
+				display: block;
+				width: 100%;
+				text-align: center;
+				color:#FFF;				
+			}
 		}
 .container{
 width:100%;
@@ -117,7 +126,7 @@ width:100%;
 				}
 				&#Legit{
 					background-image: url(../images/Legit.png);
-					background-color: #7E420A;
+					background-color: #3D57C0;
 				}
 				&#Myst{
 					background-image: url(../images/Myst.png);

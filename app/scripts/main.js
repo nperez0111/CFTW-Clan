@@ -466,7 +466,7 @@ var first = true;
 		
 //console.log(arr+"");
 		
-		
+		$(this).css({'text-indent': '0px'});
 		isopen=$(this);
 	});
 
