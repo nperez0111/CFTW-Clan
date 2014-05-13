@@ -14,10 +14,11 @@ body{overflow-x:hidden;}
 			padding:0px;
 			transition: all 350ms ease-out;
 			font-family: 'Orbitron', sans-serif;
-			text-indent: -9999px;
+			text-indent: -2999px;
 			text-transform: capitalize;
 			background-position: top center;
 			background-repeat: no-repeat;
+			-ms-interpolation-mode: bicubic; 
 			h3{
 				position: absolute;
 				bottom: 0px;
@@ -96,50 +97,7 @@ width:100%;
 			div{
 
 				@include member(200px);
-				&#Perf{
-					background-image: url(../images/Perfection.png);
-					background-color: #0C1B10;
-				}
-				&#Boom{
-					background-image: url(../images/Boom.png);
-					background-color: #1C8807;
-				}
-				&#Zukko{
-					background-image: url(../images/Zukko.png);
-					background-color: #AF4702;
-				}
-				&#Nick{
-					background-image: url(../images/Nick.png);
-					background-color: #DAC10F;
-				}
-				&#Copy{
-					background-image: url(../images/Copy.png);
-					background-color: #060529;
-				}
-				&#Hybrid{
-					background-image: url(../images/Hybrid.png);
-					background-color: #076E88;
-				}
-				&#Rezyy{
-					background-image: url(../images/Rezyy.png);
-					background-color: #00180A;
-				}
-				&#Legit{
-					background-image: url(../images/Legit.png);
-					background-color: #3D57C0;
-				}
-				&#Myst{
-					background-image: url(../images/Myst.png);
-					background-color: #2E3035;
-				}
-				&#Bolt{
-					background-image: url(../images/Bolt.png);
-					background-color: #C20000;
-				}
-				&#Blaze{
-					background-image: url(../images/Blaze.png);
-					background-color: #3C1F0C;
-				}
+				
 
 			}
 
@@ -191,4 +149,147 @@ width:100%;
   	  .row{margin: 0 auto;}
   	}
   	}
+  	@media (max-width: 320px) {
+  	#Perf{
+					background-image: url(../images/mobile/small/Perfection.png);
+					background-color: #0C1B10;
+				}
+				#Boom{
+					background-image: url(../images/mobile/small/Boom.png);
+					background-color: #1C8807;
+				}
+				#Zukko{
+					background-image: url(../images/mobile/small/Zukko.png);
+					background-color: #AF4702;
+				}
+				#Nick{
+					background-image: url(../images/mobile/small/Nick.png);
+					background-color: #DAC10F;
+				}
+				#Copy{
+					background-image: url(../images/mobile/small/Copy.png);
+					background-color: #060529;
+				}
+				#Hybrid{
+					background-image: url(../images/mobile/small/Hybrid.png);
+					background-color: #076E88;
+				}
+				#Rezyy{
+					background-image: url(../images/mobile/small/Rezyy.png);
+					background-color: #00180A;
+				}
+				#Legit{
+					background-image: url(../images/mobile/small/Legit.png);
+					background-color: #3D57C0;
+				}
+				#Myst{
+					background-image: url(../images/mobile/small/Myst.png);
+					background-color: #2E3035;
+				}
+				#Bolt{
+					background-image: url(../images/mobile/small/Bolt.png);
+					background-color: #C20000;
+				}
+				#Blaze{
+					background-image: url(../images/mobile/small/Blaze.png);
+					background-color: #3C1F0C;
+				}
+			}
+  	@media (min-width: 320px) {
+  	#Perf{
+					background-image: url(../images/mobile/Perfection.png);
+					background-color: #0C1B10;
+				}
+				#Boom{
+					background-image: url(../images/mobile/Boom.png);
+					background-color: #1C8807;
+				}
+				#Zukko{
+					background-image: url(../images/mobile/Zukko.png);
+					background-color: #AF4702;
+				}
+				#Nick{
+					background-image: url(../images/mobile/Nick.png);
+					background-color: #DAC10F;
+				}
+				#Copy{
+					background-image: url(../images/mobile/Copy.png);
+					background-color: #060529;
+				}
+				#Hybrid{
+					background-image: url(../images/mobile/Hybrid.png);
+					background-color: #076E88;
+				}
+				#Rezyy{
+					background-image: url(../images/mobile/Rezyy.png);
+					background-color: #00180A;
+				}
+				#Legit{
+					background-image: url(../images/mobile/Legit.png);
+					background-color: #3D57C0;
+				}
+				#Myst{
+					background-image: url(../images/mobile/Myst.png);
+					background-color: #2E3035;
+				}
+				#Bolt{
+					background-image: url(../images/mobile/Bolt.png);
+					background-color: #C20000;
+				}
+				#Blaze{
+					background-image: url(../images/mobile/Blaze.png);
+					background-color: #3C1F0C;
+				}
+			}
+
 }
+
+@media (min-width: 979px) {
+  	
+  		#Perf{
+					background-image: url(../images/Perfection.png);
+					background-color: #0C1B10;
+				}
+				#Boom{
+					background-image: url(../images/Boom.png);
+					background-color: #1C8807;
+				}
+				#Zukko{
+					background-image: url(../images/Zukko.png);
+					background-color: #AF4702;
+				}
+				#Nick{
+					background-image: url(../images/Nick.png);
+					background-color: #DAC10F;
+				}
+				#Copy{
+					background-image: url(../images/Copy.png);
+					background-color: #060529;
+				}
+				#Hybrid{
+					background-image: url(../images/Hybrid.png);
+					background-color: #076E88;
+				}
+				#Rezyy{
+					background-image: url(../images/Rezyy.png);
+					background-color: #00180A;
+				}
+				#Legit{
+					background-image: url(../images/Legit.png);
+					background-color: #3D57C0;
+				}
+				#Myst{
+					background-image: url(../images/Myst.png);
+					background-color: #2E3035;
+				}
+				#Bolt{
+					background-image: url(../images/Bolt.png);
+					background-color: #C20000;
+				}
+				#Blaze{
+					background-image: url(../images/Blaze.png);
+					background-color: #3C1F0C;
+				}
+
+			
+		}
