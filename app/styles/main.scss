@@ -14,7 +14,7 @@ body{overflow-x:hidden;}
 			padding:0px;
 			transition: all 350ms ease-out;
 			font-family: 'Orbitron', sans-serif;
-			text-indent: -2999px;
+			text-indent: -3999px;
 			text-transform: capitalize;
 			background-position: top center;
 			background-repeat: no-repeat;
@@ -165,34 +165,42 @@ width:100%;
 				#Nick{
 					background-image: url(../images/mobile/small/Nick.png);
 					background-color: #DAC10F;
+					background-size:cover;
 				}
 				#Copy{
 					background-image: url(../images/mobile/small/Copy.png);
 					background-color: #060529;
+					background-size:cover;
 				}
 				#Hybrid{
 					background-image: url(../images/mobile/small/Hybrid.png);
 					background-color: #076E88;
+					background-size:cover;
 				}
 				#Rezyy{
 					background-image: url(../images/mobile/small/Rezyy.png);
 					background-color: #00180A;
+					background-size:cover;
 				}
 				#Legit{
 					background-image: url(../images/mobile/small/Legit.png);
 					background-color: #3D57C0;
+					background-size:cover;
 				}
 				#Myst{
 					background-image: url(../images/mobile/small/Myst.png);
 					background-color: #2E3035;
+					background-size:cover;
 				}
 				#Bolt{
 					background-image: url(../images/mobile/small/Bolt.png);
 					background-color: #C20000;
+					background-size:cover;
 				}
 				#Blaze{
 					background-image: url(../images/mobile/small/Blaze.png);
 					background-color: #3C1F0C;
+					background-size:cover;
 				}
 			}
   	@media (min-width: 320px) {
