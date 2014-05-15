@@ -12,9 +12,9 @@ body{overflow-x:hidden;}
 			vertical-align: middle;
 			background-color: $color;
 			padding:0px;
-			transition: all 350ms ease-out;
+			transition: all 760ms ease-out;
 			font-family: 'Orbitron', sans-serif;
-			text-indent: -3999px;
+			text-indent: -4999px;
 			text-transform: capitalize;
 			background-position: top center;
 			background-repeat: no-repeat;
@@ -28,11 +28,16 @@ body{overflow-x:hidden;}
 				text-align: center;
 				color:#FFF;				
 			}
+			p{
+				color:#FFF;white-space:normal;
+				word-wrap:normal;
+			}
 		}
 .container{
 width:100%;
 	.container-fluid{
 		background-image: url(../images/idk.jpg);
+		height: 100%;
 		background-size:100% auto;
 		background-attachment: fixed;
 		background-position: center;
@@ -46,7 +51,7 @@ width:100%;
 		div{
 			background-color: #eee;
 			background: linear-gradient(to bottom, rgba(142,142,142,1) 0%,rgba(142,142,142,0.97) 56%,rgba(255,255,255,0.94) 100%);
-			color:#428bca;
+			color:#03A4FF;
 			-webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
 	        box-shadow: 0 8px 6px -6px black;

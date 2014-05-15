@@ -96,7 +96,7 @@ var firster=true;
 				return valy+(200*i)+"px";
 			}
 			var isopen=null;
-			function resetter(str){
+			function resetter(str){$(isopen).children("p").removeAttr("style");
 				
 							var widthy;
 						/*if(Math.abs($(cur).width()-Math.floor(theWindow.width()*0.3333333))<40){
@@ -467,6 +467,7 @@ var first = true;
 //console.log(arr+"");
 		
 		$(this).css({'text-indent': '0px'});
+		$(this).children("p").css({'background-color':'rgba(0,0,0,0.6)'});
 		isopen=$(this);
 	});
 
