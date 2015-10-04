@@ -58,44 +58,38 @@ var firster=true;
 			var theWindow        = $(window),
 			    $bg              = $(".container-fluid"),
 			    aspectRatio      = $bg.width() / $bg.height(),
-			    valy = theWindow.height()+$('nav').height()+$('.members').outerHeight()+30;
+			    valy = theWindow.height()+$('nav').height()+$('.members').outerHeight();
 			    			    		
 			function resizeBg() {
 				var h= theWindow.height()+"px";
-				valy = theWindow.height()+$('nav').height()+$('.members').outerHeight()+30;
+				valy = theWindow.height()+$('nav').height()+$('.members').outerHeight();
 				var hs= (theWindow.height()/2)-($bg.children().height()/2);
-				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
-
-				    $bg
-				    	.css({"height":"100%",
-				    		"width":"auto"
-				    	});
-
+				
 				    	$bg.children().css("margin-top", hs);
 
 				    	$('nav').css("margin-top",h);
-				} 
-				else {
-
-				    $bg
-				    	.css({
-				    		"width":"100%",
-				    		"height":"auto"		
-				    });
-				    	$bg.children().css("margin-top", hs);
-
-				    	$('nav').css("margin-top",h);
+				if($bg.width()<480){
+					$bg.backstretch("../images/idksmall.jpg");
+				}
+				else{
+					$bg.backstretch("../images/idk.jpg");
+					valy += 30;
 				}
 							
 			}
+			
 			                   			
 			theWindow.resize(resizeBg).trigger("resize");
 			//in progress--clickable members
-			
+			var memheight=$(".btn").height();
 			function cal(i){
-				return valy+(200*i)+"px";
+				return valy+(memheight*i)+"px";
+			}
+			function cal(i,x){
+				return valy+(memheight*i)+$('.main_guys').outerHeight()-153+"px";
 			}
 			var isopen=null;
+
 			function resetter(str){$(isopen).children("p").removeAttr("style");
 				
 							var widthy;
@@ -108,46 +102,42 @@ var firster=true;
 						else if(Math.abs($(cur).width()-Math.floor(theWindow.width()*0.50))<40){
 							*/
 						if(theWindow.width()>991){	
-							if($(isopen).index()<4){
+							if($(isopen).index('.btn')<3){
 								widthy ='33.3333333%';
 							}
-							else if($(isopen).index()>3){
+							else if($(isopen).index('.btn')>2){
 								widthy = '25%';
 							}
 						}
 						else if(theWindow.width()>767){
-							if($(isopen).index()<4){
+							if($(isopen).index('.btn')<4){
 								widthy ='50%';
 							}
-							else if($(isopen).index()>3){
+							else if($(isopen).index('.btn')>3){
 								widthy = '25%';
 							}
 
 						}
 						else{
 
-							if($(isopen).index()<4){
+							if($(isopen).index('.btn')<4){
 								widthy ='100%';
 							}
-							else if($(isopen).index()>3){
+							else if($(isopen).index('.btn')>3){
 								widthy = '50%';
 							}
 						}
-						/*}
-						else{
-							
-						}*/
+						$('.main_guys').removeAttr("style");
 						console.log(widthy);
 						isopen.css({
-							width: widthy,
-							height:"200px"
+							width: widthy
 						});
 			if(str=="n"){
 				$('.btn').each(function() {
 					
 				  		$( this ).removeAttr("style");
 				});
-			}
+			}return widthy;
 
 				
 			}
@@ -156,219 +146,186 @@ var first = true;
 	$('.btn').click(function(){
 		if(isopen==null){
 			isopen=$(this);
+			console.log('was null');
 		}
 		else if($(this).is(isopen) && first){
 			resetter("n");
 			first = false;
+			console.log('set first to false resetter with n');
 			return;
 						
 		}
-		else if($(this).is(isopen) && !first){
-			resetter("n");
+		else if($(this).is(isopen)){
 			first = true;
+			console.log('first to true continue');
 			
 		}
 		else{
 			resetter("n");
+			console.log('resetter empty');
 		}
 			
 
-				if($(this).index()<4){
+				if($(this).index('.btn')<3){
 
 
-					if(theWindow.width()>768){
+					if(theWindow.width()>768 && $(this).is("#Perf") || $(this).is("#Boom") || $(this).is("#Zukko")){console.log($(this).index('.btn'));
 					//check if it is the 1st 2nd or 3rd elem
-					if($(this).index()==1){
+					$('.main_guys').css({'margin-bottom':'200px'});
+					if($(this).index()==0){
+						$($('.btn').get(2)).css({
+							width:'25%'
+						});
 
 						console.log("Im 1");
 						$(this).css({
 							width:'50%',
 							height:"600px",
-							"margin-left": "25%"
-						}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
+							"margin-left": '25%'
+						}).delay(400).velocity("scroll", 500);
+
 						$($('.btn').get(1)).css({
-							width:'25%',
-							height: "200px",
+							width: '25%',
 							position: "absolute",
 							left:"0px"
 						});
-						$($('.btn').get(2)).css({
-							width:'25%'
-						});
-						$($('.btn').get(3)).css({
-							width:'25%',
-							height: "200px",
-							position: "absolute",
-							left:"0px",
-							top: cal(1)
-						});
-						$($('.btn').get(4)).css({
-							width:'25%',
-							height: "200px",
-							position: "absolute",
-							left:"0px",
-							top: cal(2)
-						});
+						
 
 					}
-					else if($(this).index()==2){
+					else if($(this).index()==1){
 						console.log("Im 2");	
 						$(this).css({
 							width:'50%',
 							height:"600px"
-						}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
+						}).delay(400).velocity("scroll", 500);
 						$($('.btn').get(0)).css({
-							width:'25%',
-							height: "200px"
+							width:'25%'
 						});
 						$($('.btn').get(2)).css({
-							width:'25%',
-							height: "200px"
-						});
-						$($('.btn').get(3)).css({
-							position:'absolute',
-							left:'0',
-							top: cal(1)
-						});
-						$($('.btn').get(4)).css({
-							position:'absolute',
-							left:'0',
-							top: cal(2)
+							width:'25%'
 						});
 					}
 					else{
 						console.log("Im 3");
+						$($('.btn').get(0)).css({
+							width:'25%'
+						});
 						$(this).css({
 							width:'50%',
-							height:"600px",
-							"margin-left": "25%"
-						}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
-						$($('.btn').get(0)).css({
-							width:'25%',
-							height: "200px"
-						});
+							height:"600px"
+						}).delay(400).velocity("scroll", 500);
+
 						$($('.btn').get(1)).css({
-							width:'25%',
-							height: "200px"
-						});
-						$($('.btn').get(3)).css({
-							width:'25%',
-							height: "200px",
+							width: '25%',
 							position: "absolute",
-							right:"25%",
-							top: cal(0)
-						});
-						$($('.btn').get(4)).css({
-							width:'25%',
-							height: "200px",
-							position: "absolute",
-							right:"0px",
-							top: cal(0)
-						});
-						$($('.btn').get(5)).css({
-							width:'25%',
-							height: "200px",
-							position: "absolute",
-							left:"0px",
-							top: cal(1)
-						});
-						$($('.btn').get(6)).css({
-							width:'25%',
-							height: "200px",
-							position: "absolute",
-							left:"0px",
-							top: cal(2)
-						});
-						$($('.btn').get(7)).css({
-							width:'25%',
-							height: "200px",
-							position: "absolute",
-							left:"0px",
-							top: cal(3)
+							right:"0px"
 						});
 					}//end check index of elem within parent
 				}
 				else{
 
 					$(this).css({
-								
-								height:"400px"
+								width:'50%'
 							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 				}
 
 				}
 				//if they are the other members
-				else if($(this).index()>3){
+				else if($(this).index('.btn')>2){
 					//only if the size of the window is big
-					if(theWindow.width()>991){
+					if(theWindow.width()>991){console.log($(this).index('.btn')+"    ");var memb =$(this).index('.btn');
 
-						if($(this).index()==5){
-
-							$($('.btn').get(5)).css({
+						if(memb==3){
+							$(this).css({
+								'margin-left':'25%'
+							});
+							$($('.btn').get(4)).css({
+								position:'absolute',
+								left:'0',
+								top: cal(1,0)
+							});
+						}
+						else if(memb==7){
+							$(this).velocity({
+								'margin-left':'25%'
+							});
+							$($('.btn').get(8)).css({
+								position:'absolute',
+								left:'0',
+								top: cal(2,0)
+							});
+						}
+						else if(memb==4|| memb==8){
+							/*$($('.btn').get(5)).css({
 								position:'absolute',
 								left:'0',
 								top: cal(2)
-							});
+							});*/
 
 						}
+						else if(memb==5){
 
-						else if($(this).index()==6){
-
-							$($('.btn').get(6)).css({
-								position:'absolute',
-								left:'0',
-								top: cal(2)
-							});
-
-							$($('.btn').get(7)).css({
-								position:'absolute',
-								left:'25%',
-								top: cal(2)
-							});
-
-						}
-
-						else if($(this).index()==7){
-
-							$($('.btn').get(7)).css({
+							$($('.btn').get(memb-1)).css({
 								position:'absolute',
 								right:'0',
-								top: cal(1)
+								top: cal(1,0)
+							});
+							$($('.btn').get(memb+1)).css({
+								'clear': 'left'
 							});
 
 						}
-						else if($(this).index()==9){console.log("was me");
+						else if(memb==9){
 
-							$($('.btn').get(10)).css({
-								top:cal(3),
-								position:"absolute",
-								left:'0'
+							$($('.btn').get(memb-1)).css({
+								position:'absolute',
+								right:'0',
+								top: cal(2,0)
+							});
+							$($('.btn').get(memb+1)).css({
+								'clear': 'left'
 							});
 
 						}
 
-						else if($(this).index()==10){
+						
 
-							$($('.btn').get(10)).css({
-								top:"0px",
-								position:"relative"
+						else if(memb==6){
+							$(this).css({
+								'margin-right':'25%'
 							});
 
-							$($('.btn').get(10)).css({
-								top:-200
+							$($('.btn').get(memb-2)).css({
+								position:'absolute',
+								right:'0',
+								top: cal(1,0)
+							});
+
+							$($('.btn').get(memb-1)).css({
+								position:'absolute',
+								left:'0',
+								top: cal(2,0)
+							});
+							$($('.btn').get(memb+1)).css({
+								'margin-left':"25%"
+							});
+
+						}
+						else if(memb==10){
+							$(this).css({
+								'margin-left':'25%'
 							});
 
 						}
 						$(this).css({
-								width:'50%',
-								height:"400px"
+								width:'50%'
 							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 					}
 
 
 					else if(theWindow.width()>767){
 						
-							if($(this).index()==4){
+							if(memb==4){
 								resetter("n");
 								$($('.btn').get(4)).css({
 									position:'absolute',
@@ -382,7 +339,7 @@ var first = true;
 								});
 
 							}
-							else if($(this).index()==5){
+							else if(memb==5){
 
 								$($('.btn').get(5)).css({
 								position:'absolute',
@@ -392,7 +349,7 @@ var first = true;
 
 							}
 
-							else if($(this).index()==7){
+							else if(memb==7){
 								$($('.btn').get(7)).css({
 									position:'absolute',
 									left:'0',
@@ -400,7 +357,7 @@ var first = true;
 								});
 								
 							}
-							else if($(this).index()==8){
+							else if(memb==8){
 
 							$($('.btn').get(8)).css({
 								top:"0px",
@@ -429,7 +386,7 @@ var first = true;
 							
 
 							}
-							else if($(this).index()==9){
+							else if(memb==9){
 								$($('.btn').get(9)).css({
 									position:'absolute',
 									right:'0',
@@ -443,12 +400,12 @@ var first = true;
 							}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 					}
 					else{
-						if($(this).index()%2==1){
-							console.log((($(this).index()-5)*100)+"yeah");
-							$($('.btn').get($(this).index())).css({
+						if(memb%2==1){
+							console.log(((memb-5)*100)+"yeah");
+							$($('.btn').get(memb)).css({
 									position:'absolute',
 									right:'0',
-									top: valy+600+(($(this).index()-5)*100)+"px"
+									top: valy+600+((memb-5)*100)+"px"
 								}).delay(400).velocity("scroll", 500).velocity({ opacity: 1 });
 						}
 						$(this).css({
